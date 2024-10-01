@@ -1,0 +1,74 @@
+<!-- Could probably make a blackjack game with the skeleton of this code-->
+<!-- Definetly coming back to this later when I'm less busy. Probably not this week.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <script>
+        //create a function to run the game
+        function StartGame(){
+            //Shows what's going on in this function shown in the console
+            console.log("StartGame function was called");
+
+            //roll a die by calling the rollDie function
+            var die1 = rollDie();
+            console.log("The first die roll is " + die1);
+
+            //roll a die by calling the rollDie function
+            var die2 = rollDie();
+            console.log("The second die roll is " + die2);
+
+            //add the dice rolls together
+            var sum = die1 + die2;
+            console.log("The sum is " + sum);
+
+            //output the dice dolls to the page
+            document.getElementById ("die1results").textContent = "Die 1 is:" + die1;
+            document.getElementById ("die2results").textContent = "Die 2 is:" + die2;
+           document.getElementById ("sumResult").textContent = "The sum is:" + sum; 
+
+            //game logic
+            if (sum== 7 || sum == 21){
+                //if yo uget 
+                document.getElementById ("gameResults").textContent = "You lose";
+            }
+
+            else if(die1 == die2 && die1 % 2 ==0){
+                // of the 
+                document.getElementById ("gameResults").textContent = "You win";
+            }
+            else{ 
+                document.getElementById ("gameResults").textContent = "You tied";
+            }
+
+        }
+        //create a function is generate or mimic a die roll - random number between one and six.
+        function rollDie(){
+            //generate a random number between one and six (Math is capitalized)
+            var die = Math.random() * 6;
+            //return the random number to the code that called this function
+            return Math.ceil(die); //return a whole number
+        
+        }
+    </script>
+</head>
+<body>
+    <header> 
+        <h1> Welcome to my dice game. </h1>
+        <h2> Click the button to play! </h2>
+    </header>
+
+    <main> 
+        <button onclick="StartGame();"> Start </button>
+         <div id="gameResults">Game results</div>
+         <div id="die1results">die 1 results</div>
+         <div id="die2results">die 2 results</div>
+         <div id="sumResult">sum result</div>
+    </main>
+</body>
+</html>
+
+<!-- Date: 9-26-2024  -->
