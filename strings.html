@@ -1,0 +1,40 @@
+<!-- Madalyn Cook -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Validation</title>
+    <link rel="stylesheet" href="Main.css">
+    <style> 
+        #Loginstatus{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello! Welcome to the log in page.</h1>
+    <h2> Please log in to continue.</h2>
+    <br>
+    <div id="Loginstatus"></div>
+    <br>
+    <form method="post" onsubmit="return validateform();">
+        <lable for="fName">First Name:</lable>
+        <input type="text" id="fName" name="fName">
+        <br>
+        <lable for="lName">Last Name:</lable>
+        <input type="text" id="lName" name="lName">
+        <br>
+        <label for="Zip">Zip code:</label>
+        <input type="number" id="Zip" name="Zip">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+    <script src="Script.js">
+        
+    </script>
+</body>
+</html>
+
+<!-- Date:
+ 10 - 17 - 2024 -->
