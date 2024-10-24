@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index CSC102</title>
-</head>
+    <link rel="stylesheet" href="main.css">
+    <script src="StartStopBttn.js"> </script>
+</head >
 <body>
     <!-- this section will have things like a menu or logo or page title -->
     <header> 
-        <h1> CSC102 Page</h1>
+        <h1> CSC 102 - Page</h1>
         <!-- create a nav section to hold the menu -->
         <nav> 
             <a href="index.html"> Home </a>
             <br> 
-            <a href="Boards.html"> Boards </a>
+            <a href="Board.html"> Boards </a>
         </nav>
      </header>
 
     <p> 
-        <!-- Image not showing on page. No idea why only the original tag works, but not this one. Curse HTML for being difficult.-->
-        <img src="frebby 4 predisnet.jpg" height="1000" id="memeImage" alt="Image made by Madalyn Cook" >
+        <input type="button" id="startButton" value="Move image" onclick="moveImage();">
+        <input type="button" id="stopButton" value="Stop moving image" onclick="stopImage();">
+        <!-- Image not showing on my own page. Think it works for others? Not entirely sure.-->
+        <img src="Images/Vote4Freddy.jpg" height="500px" id="memeImage" alt="Image made by Madalyn Cook" >
     </p>
 
     <!-- add some personal and uat info to the footer -->
@@ -36,3 +40,8 @@
 
 </body>
 </html>
+
+
+<!-- Date:
+ 10 - 24 - 24
+ -->
