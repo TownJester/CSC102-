@@ -11,8 +11,8 @@ function moveImage(){
     var image = document.getElementById("memeImage")
 
     //this will help keep track of where the image was
-    var oldX = 150;
-    var oldY = 150;
+    var oldX = 500;
+    var oldY = 250;
 
     // keepiing track of the interval id will allow us to stop the image from moving
     intervalId = setInterval(
@@ -39,4 +39,47 @@ function stopImage(){
     document.getElementById("stopButton").disabled = true;
     //call the built in Javascript function to clear out the interval
     clearInterval(intervalId);
+}
+
+
+// SOUND CODING
+function addSound(){
+    //create a new audio HTML element
+    var soundEl = document.createElement("audio");
+    //shortcut to the play button
+    var btnPlay = document.getElementById("btnPlay");
+    //shortcut to the pause button
+    var btnPause = document.getElementById("btnPause");
+
+    //set up the id="audioSound" on our audio element
+    //equivalent to creating id in HTML
+    soundEl.setAttribute("id", "audioSound");
+    //set up the source
+    // src = source = the file name
+    soundEl.setAttribute("src", "Media/hawaii ambient sounds.m4a");
+    //add the sound element to the HTML page
+    document.body.appendChild(soundEl);
+
+    //un-hide the pause and play buttons
+    btnPause.hidden = false;
+    btnPlay.hidden = false;
+}
+
+//set up function to play the sound
+function playSound(){
+    //set up the shortcut to the audio element that we created in the addsound function
+    var audio = document.getElementById("audioSound")
+    //start playin audio
+    audio.play();
+    //log to see that it works
+    console.log("sound played");
+}
+
+//set up function to pause the playing of sound
+function pauseSound(){
+     //set up the shortcut to the audio element that we created in the addsound function
+     var audio = document.getElementById("audioSound");
+     //pause the sound playing
+     audio.pause();
+     console.log("Sound paused");
 }
