@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 Array Example</title>
+</head>
+<body>
+    <h1>Pizza Chef Array Example</h1>
+
+    <p>Total Pizzas Baked <span id="TotalPizzaBaked">0</span> </p> 
+
+    <p> Baking Level: <span id="spnLevel"></span></p>
+
+    <label for="numPizzas">New pizzas baked</label>
+    <input type="number" id="numPizzas" name="numPizzas" min="0" max="1000" value="0">
+    
+    <button onclick="UpdateChefStats();">Update stats</button>
+
+    <p> Toppings: <span id=spnToppings></span> </p>
+    
+    <script>
+        //function to add pizzas baked
+        function UpdateChefStats(){
+            //get number of new pizzas
+            var newPizza = parseInt(document.getElementById("numPizzas").value);
+            //get the numver of old pizzas
+            var oldPizzas = parseInt(document.getElementById("TotalPizzaBaked").textContent);
+
+            console.log("newPizza " + newPizza);
+            console.log("oldPizzas " + oldPizzas);
+
+            //add old and new pizzas together
+            var totalP = newPizza + oldPizzas;
+            //update the pizza counter with the new value
+            document.getElementById("TotalPizzaBaked").textContent = totalP
+
+
+            // this variable will track the level of the chef based on how many pizzas they baked
+            var chefLevel = "";
+            //add some descion logic to check for pizza chef level
+            if (totalP > 500){
+                chefLevel = "Master Chef";
+            }
+            else if (totalP > 300){
+                chefLevel = "Expert Chef";
+            }
+            else if (totalP > 100){
+                chefLevel = "Skilled Chef";
+            }
+            else{ 
+            chefLevel = "Beginner Chef";
+            }
+        document.getElementById("spnLevel").textContent = chefLevel;
+        }
+
+
+
+        //topping varaibles
+        var topping1 = "Pepperoni";
+        var topping2 = "Mushrooms";
+        var topping3 = "Olives";
+        var topping4 = "Pineapple";
+        var topping5 = "Ham";
+        var topping6 = "Sausage";
+        var topping7 = "Basil";
+        var topping8 = "Cheese";
+       // document.getElementById("spnToppings").innerText = topping1 + "," + topping2 + "," + topping3 + "," + topping4 + "," + topping5 + "," + topping6 + "," + topping7 + "," + topping8;
+
+        //refactor toppings code to use an array
+        var arrToppings = ["Pepperoni", "Mushrooms", "Olives", "Pineapple", "Ham", "Sausage", "Basil", "Cheese"];
+
+        // print out the toppings in the array using a loop
+        // wehn looping throuhgh an array. start off with the counter = 0
+        // keep looping until counter == the number of elements in the array
+        // increase the counter by 1 each time the loop runs so you can work with each element in the array
+        for (var i = 0; i < arrToppings.length; i++){
+            document.getElementById("spnToppings").innerHTML += arrToppings[i] + ",&nbsp";
+
+        }
+  </script>
+</body>
+</html>
