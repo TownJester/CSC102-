@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W13 Tables</title>
+    <style>
+        /*page styling  */
+           Body{
+               background-color:#8a8792;
+               color: #332F2C;
+           }
+           table{
+               width: 80%;
+               border: 5px solid rgb(161, 138, 93);
+               /* collapse the borders so they don't stack */
+               border-collapse: collapse;
+           }
+           /* these styles will apply to both the headinga and the columns abd data */
+           th, td{
+               text-align: left;
+               padding: 9px;
+           }
+   
+           th{
+               background-color: #cf898c;
+           }
+   
+           /* set alternating colors for each row */
+           tr:nth-child(even){
+               background-color: #C4A69D;
+           }
+   
+           /* add a hover to the rows */
+           tr:hover{
+               background-color: #725963;
+           }
+   
+           td{
+            color: #332F2C;
+           }
+       </style>
+   
+</head>
+<body>
+    <!-- literally just looked at my other example to make this -->
+    <table>
+        <caption> Flowers and Meanings </caption>
+        <thead> 
+            <th scope="col"> Flower </th>
+            <th scope="col"> Color </th>
+            <th scope="col"> Meaning </th>
+        </thead>
+        <tr>
+            <td> Roses </td>
+            <td> Red </td>
+            <td> Romance;Passion </td>
+        </tr>
+
+        <tr>
+            <td> Forget-Me-Not </td>
+            <td> Blue </td>
+            <td> True love </td>
+        </tr>
+
+        <tr>
+            <td> Hyacinth </td>
+            <td> Purple </td>
+            <td> Sorrow </td>
+        </tr>
+
+        <tr>
+        <td> Dandelion </td>    
+        <td> Yellow </td>
+        <td> Resilience  </td>
+        </tr>
+
+    </table>
+</body>
+</html>
