@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W13 Dynamic Table</title>
+    <style>
+        /*page styling  */
+           Body{
+               background-color:#d1c5c2;
+               color: #332F2C;
+               text-align: center;
+           }
+           table{
+               width: 80%;
+               border: 5px solid #a18a5d;
+               /* collapse the borders so they don't stack */
+               border-collapse: collapse;
+           }
+           /* these styles will apply to both the headinga and the columns abd data */
+           th, td{
+               text-align: left;
+               padding: 9px;
+           }
+   
+           th{
+               background-color: #8f4e51;
+           }
+   
+           /* set alternating colors for each row */
+           tr:nth-child(even){
+               background-color: #d38f94;
+           }
+
+           tr:nth-child(odd){
+               background-color: #C4A69D;
+           }
+   
+           /* add a hover to the rows */
+           tr:hover{
+               background-color: #725963;
+           }
+   
+           td{
+            color: #332F2C;
+           }
+           nav ul{
+    list-style: none;
+    padding: 20px;
+    margin:0;
+    border: 2px solid #a18a5d;
+}
+/* style only applies to list items */
+nav ul li{
+background-color: #cbccc3;
+margin:0;
+padding:20px;
+display: inline;
+}
+/* style the links so they look better */
+nav ul li a{
+    color:#332F2C;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius: 5px;
+    background-color:#a18a5d;
+    border:2px solid #C4A69D;
+}
+nav ul li a:hover{
+    background-color:#C4A69D;
+}
+       </style>
+</head>
+<body>
+    <nav>
+        <ul>
+     <li> <a href="LandingPage.html"> Landing Page </a> </li>
+       <li> <a href="index.html"> Index </a> </li>
+       <li> <a href="Board.html"> Boards </a> </li>
+       <li> <a href="game.html">Game</a> </li>
+       <li> <a href="PalindromeChecker.html"> Palindrome Checker</a> </li>
+       <li> <a href="strings.html"> Strings </a> </li>
+    </ul>
+    </nav>
+
+    <!-- set up structure of hte table. no data -->
+    <table id="tblData">
+        <!-- set up the header row with ht ecolumn headings -->
+         <tr>
+            <th>Flower</th>
+            <th>Color</th>
+            <th>Meanings</th>
+         </tr>
+    </table>
+
+    <script>
+        //arrFlowers is a 2-dimensional array - arrays within an array
+        var arrFlower = [
+            ['Roses', 'Red', 'Romance;Pasion'],
+            ['Myosotis', 'Blue', 'True Love'],
+            ['Hyancith', 'Purple', 'Sorrow'],
+            ['Dandelion', 'Yellow', 'Resilience']
+        ];
+
+        // function to build the table rows and the columns to show the data
+        function displayData(){
+            //create the shortcut to the HTML table element
+            var table = document.getElementById("tblData")
+
+            //loop through the 2-d arrFlowers
+            for (var i = 0; i<arrFlower.length; i++){
+                //set up a variable to hold the flower info array
+                var flower = arrFlower[i];
+
+                //build the table row
+                var row = document.createElement("tr");
+
+                //nested loop to build the coulmns / table data
+                for (var j=0; j<flower.length; j++){
+                    //create a coulmn for table data for each piece of information about the flowers
+                    var column = document.createElement("td")
+                    //add the piece of info to the td
+                    column.textContent = flower[j];
+
+                    //need to add the new column to the table row created in the outer loop
+                    
+                    row.appendChild(column);
+                }
+                //add new row with the three columns of info to the table
+                table.appendChild(row)
+            }
+        }
+
+        //call the function to display the data
+        displayData();
+    </script>
+
+</body>
+</html>
+
+<!-- 
+Date:
+12 - 5 - 24
+ -->
